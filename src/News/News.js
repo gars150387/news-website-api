@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NewSingle } from './NewSingle'
 
 export const News = () => {
-    let news = null
 
-    state = {
-    news: []
+function State(){
+    let news = []
+    return(
+        State={
+            news: news
+        }
+    )
 }
-const [state, setState] = useState(state)
 
     function FetchMethod() {
+        let news = []
         const url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=db6cc17ae2084784bd54294f72ee04f6';
 
         fetch(url)
@@ -17,18 +21,24 @@ const [state, setState] = useState(state)
                 return response.json();
             })
             .then((data) => {
-                setState({
-                    news: data.articles
+                this.setState({
+                    news: data.articles,
+                    
                 })
+                console.log(news)
             })
             .catch((error) => console.log(error));
+            {news.map((item) => {
+                <NewSingle key={item.id} item={item} className="col s8" />
+            })}
+    
     };
 
-    <div>
-        {news.map((item) => {
-            <NewSingle key={item.id} item={item} />
-        })}
-    </div>
+    // <div>
+    //     {news.map((item) => {
+    //         <NewSingle key={item.id} item={item} />
+    //     })}
+    // </div>
 
     return (
         <ul>
