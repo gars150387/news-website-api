@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React from 'react'
 import { NewSingle } from './NewSingle';
 
 export const NewNews = ()=>{
@@ -14,15 +14,21 @@ export const NewNews = ()=>{
         return response.json();
     })
   .then ((data)=>{
-      state.news.push(data)
+      state.news.push(data.articles)
       console.log('data', data)
       console.log('news', state.news)
   })
     .catch((error)=> console.log(error))
     return (
         <>
-        {state[0].news.map((item)=>{
-            <NewSingle key={item.id} />
+        {state.news.map((item)=>{
+            return(
+                <div>
+                    <li>
+                        {item.title}
+                    </li>
+                </div>
+            )
         })}
         </>
     )
