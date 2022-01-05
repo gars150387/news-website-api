@@ -13,13 +13,14 @@ export const NewNews = () => {
           .then(setData => {
             JSON.stringify(setData)
             console.log('data', setData)
+           
           })
       }, []);
       return (
         <>
           <ul>
-            {data.map((articles) => (
-              <li key={articles.id}>{articles.title}</li>
+            {aux.map((articles, index) => (
+              <li key={index}>{articles.title}</li>
             ))}
           </ul>
         </>
