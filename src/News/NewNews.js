@@ -19,7 +19,7 @@ export const NewNews = () => {
       return (
         <>
           <ul>
-            {aux.map((articles, index) => (
+            {data.map((articles, index) => (
               <li key={index}>{articles.title}</li>
             ))}
           </ul>
