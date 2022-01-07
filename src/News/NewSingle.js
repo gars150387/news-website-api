@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const NewSingle = ({ item, urlToImage, title, author, description, url, publishdAt }) => {
+export const NewSingle = ({ id, urlToImage, title, author, description, url, publishdAt }) => {
     return (
         <div>
-            <li key={item.id}>
-                <img src={urlToImage} />
+            <li key={id}>
+                <img src={urlToImage}  alt={title} />
                 <p>{title}</p>
                 <p>{author}</p>
                 <p>{description}</p>
