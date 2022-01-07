@@ -1,9 +1,12 @@
 import React from 'react'
 
-export const NewSingle = () =>{
+export const NewSingle = ({item, urlToImage, title,author,description}) => {
     return (
-        <li>
-            <p>{item.title}</p>
+        <li key={item.id}>
+            <img src={urlToImage} />
+            <p>{title}</p>
+            <p>{author}</p>
+            <p>{description}</p>
         </li>
     )
 }
