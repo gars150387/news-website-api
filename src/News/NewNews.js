@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { NewSingle } from './NewSingle'
+import { NewSingle } from './NewSingle';
 
 export const NewNews = () => {
 
@@ -19,8 +19,8 @@ export const NewNews = () => {
       return (
         <>
           <ul>
-            {data.map((articles, index) => (
-              <li key={index}>{articles.title}</li>
+            {data.map((article, index) => (
+              <NewSingle article={article} index={index} />
             ))}
           </ul>
         </>
