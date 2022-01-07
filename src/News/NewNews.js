@@ -19,7 +19,7 @@ export const NewNews = () => {
       return (
         <>
           <ul>
-            {data.map((article, index) => (
+            {data.articles && data.articles.map((article, index) => (
               <NewSingle article={article} index={index} />
             ))}
           </ul>
