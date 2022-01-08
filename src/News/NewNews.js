@@ -3,7 +3,7 @@ import { NewSingle } from './NewSingle';
 
 export const NewNews = () => {
 
-    const [data] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-12-10&sortBy=publishedAt&apiKey=db6cc17ae2084784bd54294f72ee04f6')
