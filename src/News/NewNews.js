@@ -6,7 +6,7 @@ export const NewNews = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-12-10&sortBy=publishedAt&apiKey=db6cc17ae2084784bd54294f72ee04f6')
+        fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-12-15&sortBy=publishedAt&apiKey=db6cc17ae2084784bd54294f72ee04f6')
           .then((response) => {
             return response.json();
           })
@@ -15,6 +15,7 @@ export const NewNews = () => {
             console.log('data', setData)
            
           })
+          .catch((error)=> console.log(error))
       }, []);
       return (
         <>
